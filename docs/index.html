@@ -65,9 +65,8 @@
         </button>
 
         <nav id="site-navigation" class="site-nav" aria-label="Primary" data-navigation>
-          <a href="#project">Project</a>
-          <a href="#platforms">Platforms</a>
           <a href="#downloads">Downloads</a>
+          <a href="#project">Project</a>
           <a href="#gallery">Gallery</a>
           <a href="#community">Community</a>
           <a href="https://github.com/CrimsonMage/Vitaeum_AC">GitHub</a>
@@ -101,66 +100,6 @@
             <li><strong>wgpu</strong><span>Modern rendering</span></li>
             <li><strong>3 platforms</strong><span>One client effort</span></li>
           </ul>
-        </div>
-      </section>
-
-      <section id="project" class="section project-section" aria-labelledby="project-title">
-        <div class="shell">
-          <div class="section-heading split-heading">
-            <div>
-              <p class="eyebrow">The project</p>
-              <h2 id="project-title">Parity without carrying the past forward.</h2>
-            </div>
-            <p>
-              Vitaeum preserves observable retail behavior while replacing
-              legacy runtime assumptions with focused Rust systems. Storage,
-              resources, world state, networking, UI, and rendering remain
-              deliberate, separate concerns.
-            </p>
-          </div>
-
-          <div class="feature-grid">
-            <article class="feature-card">
-              <span class="feature-number" aria-hidden="true">01</span>
-              <h3>Parity first</h3>
-              <p>Retail behavior is traced and preserved rather than approximated from memory.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-number" aria-hidden="true">02</span>
-              <h3>Modern foundation</h3>
-              <p>Rust ownership and focused APIs replace legacy lifetime and interface patterns.</p>
-            </article>
-            <article class="feature-card">
-              <span class="feature-number" aria-hidden="true">03</span>
-              <h3>Built to travel</h3>
-              <p>Windows, Linux, and macOS are treated as first-class release targets.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="platforms" class="section platform-section" aria-labelledby="platform-title">
-        <div class="shell">
-          <div class="section-heading centered-heading">
-            <p class="eyebrow">Platform support</p>
-            <h2 id="platform-title">Choose your Platform.</h2>
-            <p>Initial releases target x86-64 systems. Exact package and setup details accompany each release.</p>
-          </div>
-
-          <div class="platform-overview">
-            <article>
-              <span class="platform-mark" aria-hidden="true">WIN</span>
-              <div><h3>Windows</h3><p>x86-64</p></div>
-            </article>
-            <article>
-              <span class="platform-mark" aria-hidden="true">LNX</span>
-              <div><h3>Linux</h3><p>x86-64</p></div>
-            </article>
-            <article>
-              <span class="platform-mark" aria-hidden="true">MAC</span>
-              <div><h3>macOS</h3><p>x86-64</p></div>
-            </article>
-          </div>
         </div>
       </section>
 
@@ -254,6 +193,41 @@
         </div>
       </section>
 
+      <section id="project" class="section project-section" aria-labelledby="project-title">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">The project</p>
+              <h2 id="project-title">Parity without carrying the past forward.</h2>
+            </div>
+            <p>
+              Vitaeum preserves observable retail behavior while replacing
+              legacy runtime assumptions with focused Rust systems. Storage,
+              resources, world state, networking, UI, and rendering remain
+              deliberate, separate concerns.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-number" aria-hidden="true">01</span>
+              <h3>Parity first</h3>
+              <p>Retail behavior is traced and preserved rather than approximated from memory.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number" aria-hidden="true">02</span>
+              <h3>Modern foundation</h3>
+              <p>Rust ownership and focused APIs replace legacy lifetime and interface patterns.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number" aria-hidden="true">03</span>
+              <h3>Built to travel</h3>
+              <p>Windows, Linux, and macOS are treated as first-class release targets.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section id="gallery" class="section gallery-section" aria-labelledby="gallery-title">
         <div class="shell">
           <div class="section-heading split-heading">
@@ -335,7 +309,7 @@
       </div>
     </footer>
 
-    <dialog class="gallery-dialog" data-gallery-dialog aria-labelledby="gallery-dialog-caption">
+    <dialog class="gallery-dialog" data-gallery-dialog aria-label="Gallery image viewer">
       <button class="dialog-close" type="button" data-gallery-close>
         <span aria-hidden="true">×</span><span class="sr-only">Close image</span>
       </button>
@@ -344,7 +318,6 @@
       </button>
       <figure>
         <img src="assets/vitaeum-logo-128.webp" data-gallery-dialog-image alt="">
-        <figcaption id="gallery-dialog-caption" data-gallery-dialog-caption></figcaption>
       </figure>
       <button class="dialog-nav next" type="button" data-gallery-next>
         <span aria-hidden="true">›</span><span class="sr-only">Next image</span>

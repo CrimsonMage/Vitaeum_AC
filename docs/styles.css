@@ -400,24 +400,9 @@ button {
 }
 
 .split-heading > p,
-.centered-heading > p,
 .legal-copy p {
   margin: 0;
   color: var(--ink-muted);
-}
-
-.centered-heading {
-  max-width: 780px;
-  margin-inline: auto;
-  text-align: center;
-}
-
-.centered-heading .eyebrow {
-  justify-content: center;
-}
-
-.centered-heading > p {
-  margin-top: 20px;
 }
 
 .project-section {
@@ -462,33 +447,6 @@ button {
   color: var(--ink-muted);
 }
 
-.platform-section {
-  overflow: hidden;
-  background:
-    linear-gradient(rgba(15, 11, 20, 0.9), rgba(15, 11, 20, 0.96)),
-    radial-gradient(circle at center, rgba(136, 91, 147, 0.22), transparent 40rem);
-  border-block: 1px solid var(--line);
-}
-
-.platform-overview {
-  display: grid;
-  max-width: 950px;
-  margin: 62px auto 0;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.platform-overview article {
-  display: flex;
-  min-height: 112px;
-  padding: 24px;
-  align-items: center;
-  gap: 18px;
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-}
-
 .platform-mark {
   display: inline-grid;
   width: 52px;
@@ -510,7 +468,6 @@ button {
   font-size: 0.55rem;
 }
 
-.platform-overview h3,
 .download-card h4 {
   margin: 0;
   font-family: var(--heading);
@@ -518,7 +475,6 @@ button {
   font-weight: 600;
 }
 
-.platform-overview p,
 .download-card-heading p {
   margin: 1px 0 0;
   color: var(--ink-faint);
@@ -831,12 +787,6 @@ button {
   grid-column: 1 / -1;
 }
 
-.gallery-item:first-child span {
-  color: var(--ink);
-  font-family: var(--heading);
-  font-size: 1.06rem;
-}
-
 .gallery-item img {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -847,13 +797,6 @@ button {
 .gallery-item:hover img {
   filter: brightness(1.08);
   transform: scale(1.018);
-}
-
-.gallery-item span {
-  display: block;
-  padding: 16px 18px;
-  color: var(--ink-muted);
-  font-size: 0.84rem;
 }
 
 .gallery-dialog {
@@ -879,15 +822,9 @@ button {
 
 .gallery-dialog img {
   width: 100%;
-  max-height: calc(100svh - 125px);
+  max-height: calc(100svh - 34px);
   object-fit: contain;
-  border-radius: 11px 11px 0 0;
-}
-
-.gallery-dialog figcaption {
-  min-height: 54px;
-  padding: 14px 20px;
-  color: var(--ink-muted);
+  border-radius: 11px;
 }
 
 .community-section {
@@ -1131,10 +1068,6 @@ button {
 
   .feature-card h3 {
     margin-top: 35px;
-  }
-
-  .platform-overview {
-    grid-template-columns: 1fr;
   }
 
   .gallery-empty {

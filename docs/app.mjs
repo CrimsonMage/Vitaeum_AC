@@ -248,9 +248,7 @@ function renderGallery(grid, dialog, entries) {
     image.loading = "lazy";
     image.decoding = "async";
 
-    const caption = document.createElement("span");
-    caption.textContent = entry.caption || entry.alt;
-    button.append(image, caption);
+    button.append(image);
     button.addEventListener("click", () => openGalleryDialog(dialog, entries, triggers, index));
     return button;
   });
@@ -260,11 +258,10 @@ function renderGallery(grid, dialog, entries) {
 
 function openGalleryDialog(dialog, entries, triggers, startIndex) {
   const image = dialog.querySelector("[data-gallery-dialog-image]");
-  const caption = dialog.querySelector("[data-gallery-dialog-caption]");
   const close = dialog.querySelector("[data-gallery-close]");
   const previous = dialog.querySelector("[data-gallery-previous]");
   const next = dialog.querySelector("[data-gallery-next]");
-  if (!(image instanceof HTMLImageElement) || !caption || !(close instanceof HTMLButtonElement)) {
+  if (!(image instanceof HTMLImageElement) || !(close instanceof HTMLButtonElement)) {
     return;
   }
 
@@ -273,7 +270,6 @@ function openGalleryDialog(dialog, entries, triggers, startIndex) {
     const entry = entries[currentIndex];
     image.src = entry.src;
     image.alt = entry.alt;
-    caption.textContent = entry.caption || entry.alt;
     const showNavigation = entries.length > 1;
     if (previous instanceof HTMLButtonElement) previous.hidden = !showNavigation;
     if (next instanceof HTMLButtonElement) next.hidden = !showNavigation;
