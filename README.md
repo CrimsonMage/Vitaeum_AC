@@ -1,9 +1,9 @@
 # Vitaeum
 
 Vitaeum is a parity-first Rust reimplementation effort for the Asheron's Call
-retail client. This public repository hosts project information and release
-artifacts; users must provide any legally obtained third-party data required by
-the client.
+client for Windows, Linux, and macOS. This public repository hosts project
+information and release artifacts; users must provide any legally obtained
+third-party data required by the client.
 
 Join the community and follow development on
 [Discord](https://discord.gg/VpnYCsGZr6).

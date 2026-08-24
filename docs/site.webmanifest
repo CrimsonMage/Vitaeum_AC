@@ -1,7 +1,7 @@
 {
   "name": "Vitaeum",
   "short_name": "Vitaeum",
-  "description": "A parity-first Rust reimplementation effort for the Asheron's Call retail client.",
+  "description": "A parity-first Rust reimplementation effort for the Asheron's Call client for Windows, Linux, and macOS.",
   "start_url": "./",
   "scope": "./",
   "display": "browser",
