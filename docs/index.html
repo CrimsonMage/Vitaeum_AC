@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests"
+    >
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#100c16">
+    <meta
+      name="description"
+      content="Vitaeum is a parity-first Rust reimplementation of the Asheron's Call retail client for Windows, Linux, and macOS."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vitaeum">
+    <meta property="og:title" content="Vitaeum — A modern client reimplementation">
+    <meta
+      property="og:description"
+      content="A parity-first Rust reimplementation effort for Windows, Linux, and macOS."
+    >
+    <meta
+      property="og:image"
+      content="https://crimsonmage.github.io/Vitaeum_AC/assets/vitaeum-splash.jpg"
+    >
+    <meta property="og:url" content="https://crimsonmage.github.io/Vitaeum_AC/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://crimsonmage.github.io/Vitaeum_AC/">
+    <link rel="icon" href="assets/vitaeum.ico" sizes="any">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preload" href="assets/vitaeum-splash.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vitaeum — A modern client reimplementation</title>
+    <script type="module" src="app.mjs"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header" data-site-header>
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Vitaeum home">
+          <img src="assets/vitaeum-logo-128.webp" width="44" height="44" alt="">
+          <span>Vitaeum</span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          data-nav-toggle
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <nav id="site-navigation" class="site-nav" aria-label="Primary" data-navigation>
+          <a href="#project">Project</a>
+          <a href="#platforms">Platforms</a>
+          <a href="#downloads">Downloads</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#community">Community</a>
+          <a href="https://github.com/CrimsonMage/Vitaeum_AC">GitHub</a>
+          <a class="nav-discord" href="https://discord.gg/VpnYCsGZr6">Join Discord</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="hero-art" aria-hidden="true"></div>
+        <div class="hero-vignette" aria-hidden="true"></div>
+        <div class="shell hero-content">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> In active development</p>
+          <h1 id="hero-title">A familiar world,<br><span>rebuilt for today.</span></h1>
+          <p class="hero-summary">
+            Vitaeum is a parity-first Rust reimplementation effort for the
+            Asheron's Call retail client, designed around modern systems and
+            explicit ownership.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#downloads">View downloads</a>
+            <a class="button button-secondary" href="https://github.com/CrimsonMage/Vitaeum_AC">
+              Visit the repository
+            </a>
+            <a class="button button-secondary" href="https://discord.gg/VpnYCsGZr6">
+              Join the Discord
+            </a>
+          </div>
+          <ul class="hero-facts" aria-label="Project highlights">
+            <li><strong>Rust</strong><span>Memory-safe foundation</span></li>
+            <li><strong>wgpu</strong><span>Modern rendering</span></li>
+            <li><strong>3 platforms</strong><span>One client effort</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="project" class="section project-section" aria-labelledby="project-title">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">The project</p>
+              <h2 id="project-title">Parity without carrying the past forward.</h2>
+            </div>
+            <p>
+              Vitaeum preserves observable retail behavior while replacing
+              legacy runtime assumptions with focused Rust systems. Storage,
+              resources, world state, networking, UI, and rendering remain
+              deliberate, separate concerns.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-number" aria-hidden="true">01</span>
+              <h3>Parity first</h3>
+              <p>Retail behavior is traced and preserved rather than approximated from memory.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number" aria-hidden="true">02</span>
+              <h3>Modern foundation</h3>
+              <p>Rust ownership and focused APIs replace legacy lifetime and interface patterns.</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-number" aria-hidden="true">03</span>
+              <h3>Built to travel</h3>
+              <p>Windows, Linux, and macOS are treated as first-class release targets.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="platforms" class="section platform-section" aria-labelledby="platform-title">
+        <div class="shell">
+          <div class="section-heading centered-heading">
+            <p class="eyebrow">Platform support</p>
+            <h2 id="platform-title">Choose your world.</h2>
+            <p>Initial releases target x86-64 systems. Exact package and setup details accompany each release.</p>
+          </div>
+
+          <div class="platform-overview">
+            <article>
+              <span class="platform-mark" aria-hidden="true">WIN</span>
+              <div><h3>Windows</h3><p>x86-64</p></div>
+            </article>
+            <article>
+              <span class="platform-mark" aria-hidden="true">LNX</span>
+              <div><h3>Linux</h3><p>x86-64</p></div>
+            </article>
+            <article>
+              <span class="platform-mark" aria-hidden="true">MAC</span>
+              <div><h3>macOS</h3><p>x86-64</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="downloads" class="section download-section" aria-labelledby="download-title">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Releases</p>
+              <h2 id="download-title">Download Vitaeum.</h2>
+            </div>
+            <p>
+              The newest published build appears here automatically. Preview
+              releases are clearly labeled, and every file remains available
+              from GitHub.
+            </p>
+          </div>
+
+          <div class="release-panel" aria-live="polite" aria-busy="true" data-release-panel>
+            <div class="release-heading">
+              <div>
+                <div class="release-title-line">
+                  <h3 data-release-title>Checking for releases…</h3>
+                  <span class="release-badge" data-release-badge hidden>Preview</span>
+                </div>
+                <p data-release-meta>Connecting to GitHub Releases.</p>
+              </div>
+              <a
+                class="text-link"
+                href="https://github.com/CrimsonMage/Vitaeum_AC/releases"
+                data-release-page-link
+              >
+                All releases <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <div class="download-grid">
+              <article class="download-card" data-platform-card="windows">
+                <div class="download-card-heading">
+                  <span class="platform-mark small" aria-hidden="true">WIN</span>
+                  <div><h4>Windows</h4><p>x86-64</p></div>
+                </div>
+                <div class="asset-list" data-platform-assets="windows">
+                  <p class="asset-state">Checking availability…</p>
+                </div>
+              </article>
+              <article class="download-card" data-platform-card="linux">
+                <div class="download-card-heading">
+                  <span class="platform-mark small" aria-hidden="true">LNX</span>
+                  <div><h4>Linux</h4><p>x86-64</p></div>
+                </div>
+                <div class="asset-list" data-platform-assets="linux">
+                  <p class="asset-state">Checking availability…</p>
+                </div>
+              </article>
+              <article class="download-card" data-platform-card="macos">
+                <div class="download-card-heading">
+                  <span class="platform-mark small" aria-hidden="true">MAC</span>
+                  <div><h4>macOS</h4><p>x86-64</p></div>
+                </div>
+                <div class="asset-list" data-platform-assets="macos">
+                  <p class="asset-state">Checking availability…</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="other-downloads" data-other-downloads hidden>
+              <h4>Other downloads</h4>
+              <div class="asset-list compact" data-other-assets></div>
+            </div>
+
+            <noscript>
+              <p class="noscript-note">
+                JavaScript is disabled, so live release details cannot be shown.
+                <a href="https://github.com/CrimsonMage/Vitaeum_AC/releases">Browse releases on GitHub.</a>
+              </p>
+            </noscript>
+          </div>
+
+          <div class="requirements-callout">
+            <span class="callout-mark" aria-hidden="true">i</span>
+            <div>
+              <h3>Before you begin</h3>
+              <p>
+                Vitaeum releases do not include original Asheron's Call game
+                assets, original client binaries, or DAT files. You are
+                responsible for supplying any legally obtained third-party data
+                required for interoperability or testing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section gallery-section" aria-labelledby="gallery-title">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">Gallery</p>
+              <h2 id="gallery-title">See Vitaeum take shape.</h2>
+            </div>
+            <p>
+              Approved client captures will document progress here without
+              publishing original game assets.
+            </p>
+          </div>
+
+          <div class="gallery-grid" data-gallery-grid aria-live="polite">
+            <div class="gallery-empty" data-gallery-empty>
+              <div class="gallery-empty-art" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div>
+                <h3>Gallery coming soon</h3>
+                <p>Approved in-client captures will be added as development progresses.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="community" class="section community-section" aria-labelledby="community-title">
+        <div class="shell community-panel">
+          <div>
+            <p class="eyebrow">Community</p>
+            <h2 id="community-title">Follow development as it happens.</h2>
+            <p>
+              Join the Vitaeum Discord for project updates, release news, and
+              conversation with people following the client effort.
+            </p>
+          </div>
+          <a class="button button-primary" href="https://discord.gg/VpnYCsGZr6">
+            Join the Discord
+          </a>
+        </div>
+      </section>
+
+      <section id="legal" class="section legal-section" aria-labelledby="legal-title">
+        <div class="shell legal-layout">
+          <div>
+            <p class="eyebrow">Independent effort</p>
+            <h2 id="legal-title">Built with respect for what came before.</h2>
+          </div>
+          <div class="legal-copy">
+            <p>
+              Vitaeum is an independent compatibility and reimplementation
+              effort. It is not affiliated with, endorsed by, sponsored by, or
+              approved by the owners of Asheron's Call or any related
+              trademarks, copyrights, or assets.
+            </p>
+            <p>
+              No original Asheron's Call game assets, original client binaries,
+              DAT files, trademarks, or copyrighted materials are distributed
+              by this project.
+            </p>
+            <a class="text-link" href="https://github.com/CrimsonMage/Vitaeum_AC/blob/main/LICENSE.md">
+              Read the full license <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="brand footer-brand" href="#top" aria-label="Vitaeum home">
+          <img src="assets/vitaeum-logo-128.webp" width="36" height="36" alt="" loading="lazy">
+          <span>Vitaeum</span>
+        </a>
+        <p><a href="https://discord.gg/VpnYCsGZr6">Join Discord</a> · Follow development</p>
+        <p>© <span data-current-year>2026</span> CrimsonMage. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <dialog class="gallery-dialog" data-gallery-dialog aria-labelledby="gallery-dialog-caption">
+      <button class="dialog-close" type="button" data-gallery-close>
+        <span aria-hidden="true">×</span><span class="sr-only">Close image</span>
+      </button>
+      <button class="dialog-nav previous" type="button" data-gallery-previous>
+        <span aria-hidden="true">‹</span><span class="sr-only">Previous image</span>
+      </button>
+      <figure>
+        <img src="assets/vitaeum-logo-128.webp" data-gallery-dialog-image alt="">
+        <figcaption id="gallery-dialog-caption" data-gallery-dialog-caption></figcaption>
+      </figure>
+      <button class="dialog-nav next" type="button" data-gallery-next>
+        <span aria-hidden="true">›</span><span class="sr-only">Next image</span>
+      </button>
+    </dialog>
+  </body>
+</html>

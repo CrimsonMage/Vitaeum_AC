@@ -1,0 +1,17 @@
+{
+  "name": "Vitaeum",
+  "short_name": "Vitaeum",
+  "description": "A parity-first Rust reimplementation effort for the Asheron's Call retail client.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#09070d",
+  "theme_color": "#100c16",
+  "icons": [
+    {
+      "src": "assets/vitaeum-logo.webp",
+      "sizes": "500x500",
+      "type": "image/webp"
+    }
+  ]
+}

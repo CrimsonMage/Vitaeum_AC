@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://crimsonmage.github.io/Vitaeum_AC/sitemap.xml
