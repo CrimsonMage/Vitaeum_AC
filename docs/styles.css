@@ -827,6 +827,16 @@ button {
   text-align: left;
 }
 
+.gallery-item:first-child {
+  grid-column: 1 / -1;
+}
+
+.gallery-item:first-child span {
+  color: var(--ink);
+  font-family: var(--heading);
+  font-size: 1.06rem;
+}
+
 .gallery-item img {
   width: 100%;
   aspect-ratio: 16 / 9;

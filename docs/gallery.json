@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "src": "assets/gallery/2026-08-24-live-client-ui.webp",
+    "thumbnail": "assets/gallery/2026-08-24-live-client-ui-thumb.webp",
+    "alt": "The Vitaeum client rendering two characters, a portal, full gameplay UI, and an automation panel",
+    "caption": "August 24, 2026 — Live client UI with world rendering, characters, portals, and the automation panel."
+  },
+  {
+    "src": "assets/gallery/2026-07-14-environment-effects.webp",
+    "thumbnail": "assets/gallery/2026-07-14-environment-effects-thumb.webp",
+    "alt": "A nighttime settlement scene with trees and three glowing portal markers",
+    "caption": "July 14, 2026 — Portal effects, foliage, and the night sky rendered together."
+  },
+  {
+    "src": "assets/gallery/2026-07-14-night-settlement.webp",
+    "thumbnail": "assets/gallery/2026-07-14-night-settlement-thumb.webp",
+    "alt": "A textured settlement rendered at night with buildings, trees, and a glowing lamp",
+    "caption": "July 14, 2026 — Nighttime settlement geometry, lighting, and environmental objects."
+  },
+  {
+    "src": "assets/gallery/2026-07-12-weather-lighting.webp",
+    "thumbnail": "assets/gallery/2026-07-12-weather-lighting-thumb.webp",
+    "alt": "A textured settlement beneath a purple storm sky, rain, and a bright moon",
+    "caption": "July 12, 2026 — Weather, sky, and textured settlement rendering in the world viewer."
+  },
+  {
+    "src": "assets/gallery/2026-07-09-building-materials.webp",
+    "thumbnail": "assets/gallery/2026-07-09-building-materials-thumb.webp",
+    "alt": "A multi-level building rendered with roof, wall, trim, and floor textures",
+    "caption": "July 9, 2026 — Building materials and textures applied to static world geometry."
+  },
+  {
+    "src": "assets/gallery/2026-07-09-building-geometry.webp",
+    "thumbnail": "assets/gallery/2026-07-09-building-geometry-thumb.webp",
+    "alt": "An untextured white multi-level building model placed within rocky terrain",
+    "caption": "July 9, 2026 — Static building geometry before material and texture integration."
+  },
+  {
+    "src": "assets/gallery/2026-07-08-landblock-geometry.webp",
+    "thumbnail": "assets/gallery/2026-07-08-landblock-geometry-thumb.webp",
+    "alt": "An early world viewer visualization of green terrain and translucent blue buildings",
+    "caption": "July 8, 2026 — Early landblock and building placement visualization."
+  },
+  {
+    "src": "assets/gallery/2026-06-29-client-runtime.webp",
+    "thumbnail": "assets/gallery/2026-06-29-client-runtime-thumb.webp",
+    "alt": "An early Vitaeum client scene with terrain, radar, gameplay UI, and placeholder characters",
+    "caption": "June 29, 2026 — Early client composition with terrain, UI, radar, and placeholder entities."
+  }
+]

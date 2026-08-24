@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 import {
@@ -95,4 +96,16 @@ test("normalizes safe gallery entries and rejects remote or traversal paths", ()
   }]);
   assert.equal(normalizeLocalAssetPath("assets/gallery/image.webp"), "assets/gallery/image.webp");
   assert.equal(normalizeLocalAssetPath("/assets/gallery/image.webp"), null);
+});
+
+test("published gallery entries are valid and reference local assets", async () => {
+  const manifestUrl = new URL("../docs/gallery.json", import.meta.url);
+  const manifest = JSON.parse(await readFile(manifestUrl, "utf8"));
+  const entries = normalizeGalleryEntries(manifest);
+
+  assert.equal(entries.length, 8);
+  await Promise.all(entries.flatMap((entry) => [
+    access(new URL(`../docs/${entry.src}`, import.meta.url)),
+    access(new URL(`../docs/${entry.thumbnail}`, import.meta.url)),
+  ]));
 });
