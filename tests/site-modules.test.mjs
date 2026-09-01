@@ -109,3 +109,40 @@ test("published gallery entries are valid and reference local assets", async () 
     access(new URL(`../docs/${entry.thumbnail}`, import.meta.url)),
   ]));
 });
+
+test("website neutrally identifies people with permanent source access", async () => {
+  const page = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+
+  assert.match(page, /Vitaeum is a solo, closed-source project\./);
+  assert.match(page, /indicates access only; it does not mean they have reviewed\s+or endorsed the code/);
+  for (const name of ["Immortalbob", "Thwargle", "ThwargLauncher", "ThwargFilter", "Vanquish", "Scribble", "Paradox", "Decal", "ACME:Worldbuilder", "Aetherium", "GDLE"]) {
+    assert.match(page, new RegExp(name));
+  }
+  for (const person of ["Immortalbob", "Thwargle", "Vanquish", "Scribble", "Paradox"]) {
+    assert.match(page, new RegExp(`<strong>${person}</strong>`));
+  }
+});
+
+test("website keeps community and legal information in the compact layout", async () => {
+  const page = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+
+  assert.match(page, /Join the Discord and follow along!/);
+  assert.equal(page.match(/assets\/discord-mark\.png/g)?.length, 2);
+  assert.equal(page.match(/data-release-panel/g)?.length, 1);
+  assert.match(page, /id="downloads" class="hero-downloads"/);
+  assert.doesNotMatch(page, /Try Vitaeum/);
+  assert.match(page, /class="shell legal-note"/);
+  assert.doesNotMatch(page, /id="community"/);
+  assert.doesNotMatch(page, /Made by fans, independently\./);
+});
+
+test("website includes retail DAT download instructions and the local guide image", async () => {
+  const page = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+
+  assert.match(page, /Need the retail DATs\?/);
+  assert.match(page, /Download the End of Retail Client Files/);
+  assert.match(page, /Click the download arrow, not “Save to MEGA\.”/);
+  assert.match(page, /drag the three DAT files inside to your chosen DAT folder/);
+  assert.ok(page.indexOf("Join the Discord and follow along!") < page.indexOf("Need the retail DATs?"));
+  await access(new URL("../docs/assets/retail-dat-download.png", import.meta.url));
+});
