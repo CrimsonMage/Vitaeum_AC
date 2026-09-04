@@ -2,8 +2,12 @@
 
 Vitaeum is a parity-first Rust reimplementation effort for the Asheron's Call
 client for Windows, Linux, and macOS. This public repository hosts project
-information and release artifacts; users must provide any legally obtained
-third-party data required by the client.
+information and launcher downloads; users must provide any legally obtained
+third-party data required by the client. The signed launcher installs and
+updates the client from its separately mirrored release channel.
+
+This repository is intentionally distribution-only. Rust/Cargo source and source archives are
+excluded, and CI rejects them if they are added accidentally.
 
 Join the community and follow development on
 [Discord](https://discord.gg/VpnYCsGZr6).
@@ -29,18 +33,20 @@ node --test tests/*.test.mjs
 
 ## Publishing releases
 
-The website discovers the newest public GitHub release automatically,
-including prereleases. Use this naming convention so assets are grouped into
-the correct platform cards:
+The website discovers the newest public GitHub release automatically, including
+prereleases. A public release exposes only these launcher bootstrap packages:
 
 ```text
-vitaeum-<version>-windows-x86_64.<ext>
-vitaeum-<version>-linux-x86_64.<ext>
-vitaeum-<version>-macos-x86_64.<ext>
+vitaeum-launcher-v<version>-windows-x86_64.exe
+vitaeum-launcher-v<version>-linux-x86_64.AppImage
+vitaeum-launcher-v<version>-linux-x86_64.tar.gz
+vitaeum-launcher-v<version>-macos-universal.dmg
 ```
 
-Files that do not match a platform and `x86_64` token are shown under **Other
-downloads** rather than being assigned incorrectly.
+Managed launcher/client archives, signed indexes, checksums, and symbols are
+deliberately omitted from the download cards. The launcher verifies signed
+metadata, exact package size, SHA-256, and the installed executable hash before
+starting a client.
 
 ## Adding gallery images
 
