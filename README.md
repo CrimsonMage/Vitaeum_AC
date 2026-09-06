@@ -3,8 +3,8 @@
 Vitaeum is a parity-first Rust reimplementation effort for the Asheron's Call
 client for Windows, Linux, and macOS. This public repository hosts project
 information and launcher downloads; users must provide any legally obtained
-third-party data required by the client. The signed launcher installs and
-updates the client from its separately mirrored release channel.
+third-party data required by the client. The launcher installs and updates the
+client from its separately mirrored, cryptographically signed release channel.
 
 This repository is intentionally distribution-only. Rust/Cargo source and source archives are
 excluded, and CI rejects them if they are added accidentally.
@@ -47,6 +47,13 @@ Managed launcher/client archives, signed indexes, checksums, and symbols are
 deliberately omitted from the download cards. The launcher verifies signed
 metadata, exact package size, SHA-256, and the installed executable hash before
 starting a client.
+
+Windows and macOS launcher downloads intentionally have no public publisher identity. Windows may
+show an unknown-publisher warning. On macOS, try the launcher once, then approve it in **System
+Settings > Privacy & Security > Open Anyway**. The client is installed and started only by the
+launcher; if macOS separately blocks it after Play, approve that blocked client in the same panel
+and click Play again. Do not disable Gatekeeper globally. See Apple's
+[current first-launch instructions](https://support.apple.com/102445).
 
 ## Adding gallery images
 

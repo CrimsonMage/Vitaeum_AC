@@ -148,3 +148,14 @@ test("website includes retail DAT download instructions and the local guide imag
   assert.ok(page.indexOf("Join the Discord and follow along!") < page.indexOf("Need the retail DATs?"));
   await access(new URL("../docs/assets/retail-dat-download.png", import.meta.url));
 });
+
+test("website explains unsigned Windows and macOS first launch", async () => {
+  const page = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+
+  assert.match(page, /Unsigned Windows and macOS first launch/);
+  assert.match(page, /System Settings &gt; Privacy &amp; Security/);
+  assert.match(page, /Open Anyway/);
+  assert.match(page, /client is installed and started only by the launcher/);
+  assert.match(page, /https:\/\/support\.apple\.com\/102445/);
+  assert.match(page, /<div><h4>macOS<\/h4><p>Universal<\/p><\/div>/);
+});

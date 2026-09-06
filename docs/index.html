@@ -133,13 +133,31 @@
               <article class="download-card" data-platform-card="macos">
                 <div class="download-card-heading">
                   <span class="platform-mark small" aria-hidden="true">MAC</span>
-                  <div><h4>macOS</h4><p>x86-64</p></div>
+                  <div><h4>macOS</h4><p>Universal</p></div>
                 </div>
                 <div class="asset-list" data-platform-assets="macos">
                   <p class="asset-state">Checking…</p>
                 </div>
               </article>
             </div>
+
+            <details class="platform-instructions" open>
+              <summary>Unsigned Windows and macOS first launch</summary>
+              <p>
+                Vitaeum does not publish a platform signer identity. Windows may show an
+                unknown-publisher warning. On macOS, drag <strong>Vitaeum Launcher.app</strong> to
+                Applications and try to open it once. Then open
+                <strong>System Settings &gt; Privacy &amp; Security</strong>, scroll to Security, click
+                <strong>Open Anyway</strong> for Vitaeum Launcher, and confirm Open.
+              </p>
+              <p>
+                The client is installed and started only by the launcher. If macOS separately
+                blocks it after Play, leave the launcher open, approve the blocked client with
+                <strong>Privacy &amp; Security &gt; Open Anyway</strong>, then click Play again. Do not
+                disable Gatekeeper globally. See
+                <a href="https://support.apple.com/102445">Apple's current instructions</a>.
+              </p>
+            </details>
 
             <div class="other-downloads" data-other-downloads hidden>
               <h4>Other downloads</h4>
