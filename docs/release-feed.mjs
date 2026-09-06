@@ -12,7 +12,12 @@ const PLATFORM_PATTERNS = Object.freeze({
   macos: /(?:^|[._-])(?:macos|darwin|osx)(?:[._-]|$)/i,
 });
 
-const X86_64_PATTERN = /(?:^|[._-])(?:x86[_-]?64|amd64|x64)(?:[._-]|$)/i;
+const LAUNCHER_ASSET_PREFIX = /^vitaeum-launcher-v/i;
+const PUBLIC_FORMATS = Object.freeze({
+  windows: /-windows-x86_64\.exe$/i,
+  linux: /-linux-x86_64\.(?:AppImage|tar\.gz)$/i,
+  macos: /-macos-universal\.dmg$/i,
+});
 
 export function selectNewestPublishedRelease(releases) {
   if (!Array.isArray(releases)) {
@@ -31,11 +36,12 @@ export function selectNewestPublishedRelease(releases) {
 }
 
 export function detectAssetPlatform(assetName) {
-  if (typeof assetName !== "string" || !X86_64_PATTERN.test(assetName)) {
+  if (typeof assetName !== "string" || !LAUNCHER_ASSET_PREFIX.test(assetName)) {
     return null;
   }
 
-  return PLATFORM_ORDER.find((platform) => PLATFORM_PATTERNS[platform].test(assetName)) ?? null;
+  return PLATFORM_ORDER.find((platform) => PLATFORM_PATTERNS[platform].test(assetName)
+    && PUBLIC_FORMATS[platform].test(assetName)) ?? null;
 }
 
 export function classifyReleaseAssets(assets) {
@@ -56,7 +62,10 @@ export function classifyReleaseAssets(assets) {
     }
 
     const platform = detectAssetPlatform(asset.name);
-    groups[platform ?? "other"].push({
+    if (!platform) {
+      continue;
+    }
+    groups[platform].push({
       name: asset.name,
       size: Number.isFinite(asset.size) && asset.size >= 0 ? asset.size : 0,
       downloadUrl: asset.browser_download_url,

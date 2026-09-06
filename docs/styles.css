@@ -706,6 +706,32 @@ button {
   margin: 0;
 }
 
+.platform-instructions {
+  padding: 14px 16px;
+  margin-top: 14px;
+  color: var(--ink-muted);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  font-size: 0.8rem;
+  line-height: 1.65;
+}
+
+.platform-instructions summary {
+  color: var(--gold-light);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.platform-instructions p {
+  margin: 10px 0 0;
+}
+
+.platform-instructions a {
+  color: var(--gold-light);
+  text-underline-offset: 3px;
+}
+
 .other-downloads {
   padding-top: 24px;
   margin-top: 24px;

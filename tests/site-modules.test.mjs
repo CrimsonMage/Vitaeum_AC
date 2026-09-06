@@ -30,35 +30,37 @@ test("ignores invalid release collections and unpublished values", () => {
   assert.equal(selectNewestPublishedRelease([null, {}, { draft: true, published_at: "2026-01-01" }]), null);
 });
 
-test("detects canonical x86-64 platform tokens", () => {
-  assert.equal(detectAssetPlatform("vitaeum-v0.1.0-windows-x86_64.zip"), "windows");
-  assert.equal(detectAssetPlatform("vitaeum-v0.1.0-linux-amd64.tar.gz"), "linux");
-  assert.equal(detectAssetPlatform("vitaeum-v0.1.0-macos-x64.dmg"), "macos");
-  assert.equal(detectAssetPlatform("vitaeum-v0.1.0-darwin-x86-64.zip"), "macos");
-  assert.equal(detectAssetPlatform("vitaeum-v0.1.0-windows-arm64.zip"), null);
-  assert.equal(detectAssetPlatform("vitaeum-v0.1.0.zip"), null);
+test("detects canonical launcher bootstrap packages", () => {
+  assert.equal(detectAssetPlatform("vitaeum-launcher-v0.2.0-windows-x86_64.exe"), "windows");
+  assert.equal(detectAssetPlatform("vitaeum-launcher-v0.2.0-linux-x86_64.tar.gz"), "linux");
+  assert.equal(detectAssetPlatform("vitaeum-launcher-v0.2.0-linux-x86_64.AppImage"), "linux");
+  assert.equal(detectAssetPlatform("vitaeum-launcher-v0.2.0-macos-universal.dmg"), "macos");
+  assert.equal(detectAssetPlatform("vitaeum-client-v0.89.0-windows-x86_64.zip"), null);
+  assert.equal(detectAssetPlatform("vitaeum-launcher-v0.2.0-windows-x86_64.zip"), null);
 });
 
-test("classifies three-platform assets and retains other downloads", () => {
+test("classifies only launcher bootstrap downloads", () => {
   const assets = [
-    "vitaeum-v0.1.0-windows-x86_64.zip",
-    "vitaeum-v0.1.0-linux-x86_64.tar.gz",
-    "vitaeum-v0.1.0-macos-x86_64.dmg",
+    "vitaeum-launcher-v0.2.0-windows-x86_64.exe",
+    "vitaeum-launcher-v0.2.0-linux-x86_64.tar.gz",
+    "vitaeum-launcher-v0.2.0-linux-x86_64.AppImage",
+    "vitaeum-launcher-v0.2.0-macos-universal.dmg",
+    "vitaeum-launcher-v0.2.0-linux-x86_64.tar.zst",
+    "vitaeum-client-v0.89.0-linux-x86_64.tar.zst",
     "checksums.txt",
   ].map((name, index) => ({ name, size: 1024 * (index + 1), browser_download_url: releaseUrl(name) }));
 
   const groups = classifyReleaseAssets(assets);
   assert.equal(groups.windows.length, 1);
-  assert.equal(groups.linux.length, 1);
+  assert.equal(groups.linux.length, 2);
   assert.equal(groups.macos.length, 1);
-  assert.equal(groups.other.length, 1);
-  assert.equal(groups.other[0].name, "checksums.txt");
+  assert.equal(groups.other.length, 0);
 });
 
 test("drops malformed or untrusted release assets", () => {
   const groups = classifyReleaseAssets([
     null,
-    { name: "vitaeum-windows-x86_64.zip", browser_download_url: "https://example.com/file.zip" },
+    { name: "vitaeum-launcher-v0.2.0-windows-x86_64.exe", browser_download_url: "https://example.com/file.exe" },
     { name: "", browser_download_url: releaseUrl("empty.zip") },
   ]);
 
@@ -145,4 +147,15 @@ test("website includes retail DAT download instructions and the local guide imag
   assert.match(page, /drag the three DAT files inside to your chosen DAT folder/);
   assert.ok(page.indexOf("Join the Discord and follow along!") < page.indexOf("Need the retail DATs?"));
   await access(new URL("../docs/assets/retail-dat-download.png", import.meta.url));
+});
+
+test("website explains unsigned Windows and macOS first launch", async () => {
+  const page = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
+
+  assert.match(page, /Unsigned Windows and macOS first launch/);
+  assert.match(page, /System Settings &gt; Privacy &amp; Security/);
+  assert.match(page, /Open Anyway/);
+  assert.match(page, /client is installed and started only by the launcher/);
+  assert.match(page, /https:\/\/support\.apple\.com\/102445/);
+  assert.match(page, /<div><h4>macOS<\/h4><p>Universal<\/p><\/div>/);
 });
