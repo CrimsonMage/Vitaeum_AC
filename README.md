@@ -7,15 +7,18 @@ third-party data required by the client. The launcher installs and updates the
 client from its separately mirrored, cryptographically signed release channel.
 
 This repository is intentionally distribution-only. Rust/Cargo source and source archives are
-excluded, and CI rejects them if they are added accidentally.
+excluded. Run `node --test tests/*.test.mjs` locally before changing distribution content;
+the GitHub Actions distribution workflow is disabled so release promotion does not start CI.
 
 Join the community and follow development on
 [Discord](https://discord.gg/VpnYCsGZr6).
 
 ## Project website
 
-The GitHub Pages site is served from [`docs/`](docs/) and is designed to work
-without a build step.
+The GitHub Pages site is served from the dedicated [`site` branch's `docs/`](https://github.com/CrimsonMage/Vitaeum_AC/tree/site/docs)
+and is designed to work without a build step. Website changes must be pushed to
+`site`; release promotion updates signed channels on `main` and does not deploy
+the website. GitHub Pages uses an Actions deployment when `site` is updated.
 
 To preview it locally:
 
