@@ -1,11 +1,12 @@
 # Gallery provenance
 
 These development captures were supplied and approved for the Vitaeum project
-website by the project owner on 2026-08-24. Discord attachment snowflakes are
+website by the project owner. Discord attachment snowflakes are
 recorded without their expiring signed CDN query strings.
 
 | Website asset | Capture date | Discord attachment |
 | --- | --- | --- |
+| `2026-09-23-coastal-sunset.webp` | 2026-09-23 | `1552318555058610206` |
 | `2026-06-29-client-runtime.webp` | 2026-06-29 | `1521166154960212148` |
 | `2026-07-08-landblock-geometry.webp` | 2026-07-08 | `1524379055787479080` |
 | `2026-07-09-building-geometry.webp` | 2026-07-09 | `1524846847296802957` |

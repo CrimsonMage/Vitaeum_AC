@@ -105,7 +105,7 @@ test("published gallery entries are valid and reference local assets", async () 
   const manifest = JSON.parse(await readFile(manifestUrl, "utf8"));
   const entries = normalizeGalleryEntries(manifest);
 
-  assert.equal(entries.length, 8);
+  assert.equal(entries.length, 9);
   await Promise.all(entries.flatMap((entry) => [
     access(new URL(`../docs/${entry.src}`, import.meta.url)),
     access(new URL(`../docs/${entry.thumbnail}`, import.meta.url)),

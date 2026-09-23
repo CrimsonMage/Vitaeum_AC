@@ -706,6 +706,41 @@ button {
   margin: 0;
 }
 
+.minimum-requirements {
+  padding: 14px 16px;
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+
+.minimum-requirements h3 {
+  margin: 0;
+  color: var(--gold-light);
+  font-family: var(--heading);
+  font-size: 1rem;
+}
+
+.minimum-requirements dl {
+  display: grid;
+  margin: 10px 0 0;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: 18px;
+  row-gap: 6px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.minimum-requirements dt {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.minimum-requirements dd {
+  margin: 0;
+  color: var(--ink-muted);
+}
+
 .platform-instructions {
   padding: 14px 16px;
   margin-top: 14px;
