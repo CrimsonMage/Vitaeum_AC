@@ -115,7 +115,8 @@ test("published gallery entries are valid and reference local assets", async () 
 test("website neutrally identifies people with permanent source access", async () => {
   const page = await readFile(new URL("../docs/index.html", import.meta.url), "utf8");
 
-  assert.match(page, /Vitaeum is a solo, closed-source project\./);
+  assert.match(page, /Vitaeum began as a solo, closed-source project\./);
+  assert.match(page, /I now work\s+alongside Osteth \(Toast\) on its development\./);
   assert.match(page, /indicates access only; it does not mean they have reviewed\s+or endorsed the code/);
   for (const name of ["Immortalbob", "Thwargle", "ThwargLauncher", "ThwargFilter", "Vanquish", "Scribble", "Paradox", "Decal", "ACME:Worldbuilder", "Aetherium", "GDLE"]) {
     assert.match(page, new RegExp(name));
