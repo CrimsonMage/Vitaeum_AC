@@ -15,6 +15,9 @@ recorded without their expiring signed CDN query strings.
 | `2026-07-14-night-settlement.webp` | 2026-07-14 | `1526628136941523056` |
 | `2026-07-14-environment-effects.webp` | 2026-07-14 | `1526628730343002204` |
 | `2026-08-24-live-client-ui.webp` | 2026-08-24 | `1541458110621810809` |
+| `2026-10-13-enhanced-rendering-night.webp` | 2026-10-13 | `1559580242861891715` |
+| `2026-10-25-custom-ui-night-sky.webp` | 2026-10-25 | `1564061907978289152` |
+| `2026-10-28-custom-ui-dungeon-fog.webp` | 2026-10-28 | `1564796234429104208` |
 
 Each `-thumb.webp` file is a web-optimized 800×450 derivative of the associated
 full gallery asset.
