@@ -249,12 +249,6 @@ function renderGallery(grid, dialog, entries) {
     image.decoding = "async";
 
     button.append(image);
-    if (entry.caption) {
-      const caption = document.createElement("span");
-      caption.className = "gallery-caption";
-      caption.textContent = entry.caption;
-      button.append(caption);
-    }
     button.addEventListener("click", () => openGalleryDialog(dialog, entries, triggers, index));
     return button;
   });
